@@ -10,24 +10,22 @@ var app = express();
 
 app.set('port', tokens.PORT || tokens.DEFAULT_PORT);
 app.use(express.static(path.join(__dirname + '/html')));
-app.use(bot.webhookCallback('/bot'+tokens.BOT_TOKEN));
+app.use(bot.webhookCallback('/bot' + tokens.BOT_TOKEN));
 
-bot.telegram.setWebhook(tokens.WEBHOOK+"bot"+tokens.BOT_TOKEN);
- 
+bot.telegram.setWebhook(tokens.WEBHOOK + "bot" + tokens.BOT_TOKEN);
+
 bot.gameQuery((ctx) => {
     var uid = ctx.from.id;
     var url;
-    
+
     if (ctx.callbackQuery.message) {
         var msgid = ctx.callbackQuery.message.message_id;
         var chatid = ctx.chat.id;
         url = tokens.GAME_URL + "?uid=" + uid + "&chatid=" + chatid + "&msgid=" + msgid;
-    }
-    else if (ctx.callbackQuery.inline_message_id) {
+    } else if (ctx.callbackQuery.inline_message_id) {
         var iid = ctx.callbackQuery.inline_message_id;
         url = tokens.GAME_URL + "?uid=" + uid + "&iid=" + iid;
-    }
-    else {
+    } else {
         console.log("No detail for update from callback query.")
         url = tokens.GAME_URL;
     }
@@ -36,21 +34,21 @@ bot.gameQuery((ctx) => {
 });
 
 bot.command(['/start', '/help'], (ctx) => {
-     var reply =    "Hi! This is the bot for Three Tap Heroes.\n" +
-                    "Commands:\n" +
-                    "- /help Shows this message\n" +
-                    "- /instructions Prints the instructions for the game\n" +
-                    "- /credits Shows the credits\n" +
-                    "- /game Sends the game";
+    var reply = "Hi! This is the bot for Three Tap Heroes.\n" +
+        "Commands:\n" +
+        "- /help Shows this message\n" +
+        "- /instructions Prints the instructions for the game\n" +
+        "- /credits Shows the credits\n" +
+        "- /game Sends the game";
     ctx.reply(reply);
 });
 
 bot.command('/instructions', (ctx) => {
     var reply = "Three young heroes are standing between an army of monsters and " +
-                "the innocent villagers! Help them coordinating their attacks to repel " +
-                "the enemies. But beware! Only the frontmost enemy can be damaged. " +
-                "If you miss and hit another target, you will loose hearts! If you run " +
-                "out of hearts or the enemy reaches the heroes, it's Game Over!";
+        "the innocent villagers! Help them coordinating their attacks to repel " +
+        "the enemies. But beware! Only the frontmost enemy can be damaged. " +
+        "If you miss and hit another target, you will loose hearts! If you run " +
+        "out of hearts or the enemy reaches the heroes, it's Game Over!";
     ctx.reply(reply);
 });
 
@@ -88,6 +86,6 @@ app.get('/setscore/uid/:user_id/iid/:iid/score/:score', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(app.get('port'), () => {
+app.listen(process.env.PORT || app.get('port'), () => {
     console.log("Listening on port:" + app.get('port'));
 });

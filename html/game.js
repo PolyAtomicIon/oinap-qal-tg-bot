@@ -315,7 +315,7 @@ function setGameOver() {
 function parse(val) {
   var result = undefined;
   tmp = [];
-  location.hash
+  location.href
     .split("#")[1]
     .split("?")[1]
     .split("&")

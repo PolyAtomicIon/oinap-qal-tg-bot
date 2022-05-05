@@ -202,6 +202,7 @@ function setGameOver() {
     var msgid = parse("msgid");
     var chatid = parse("chatid");
     var iid = parse("iid");
+    console.log(uid , msgid , chatid)
     
     if (uid && msgid && chatid) {
         console.log("TAKS")

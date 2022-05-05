@@ -204,10 +204,10 @@ function setGameOver() {
     var iid = parse("iid");
     
     if (uid && msgid && chatid) {
-        $.get("/setscore/uid/"+uid+"/chat/"+chatid+"/msg/"+msgid+"/score/"+score);
+        $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/chat/"+chatid+"/msg/"+msgid+"/score/"+score);
     }
     else if (uid && iid) {
-        $.get("/setscore/uid/"+uid+"/iid/"+iid+"/score/"+score)
+        $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/iid/"+iid+"/score/"+score)
     }
 }
 

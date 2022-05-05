@@ -316,10 +316,10 @@ function parse(val) {
   var result = undefined;
   tmp = [];
   location.href
-    .split("#")[1]
-    .split("?")[1]
-    .split("&")
-    .forEach(function (item) {
+    ?.split("#")[1]
+    ?.split("?")[1]
+    ?.split("&")
+    ?.forEach(function (item) {
       tmp = item.split("=");
       if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
     });

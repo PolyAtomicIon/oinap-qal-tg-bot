@@ -204,9 +204,11 @@ function setGameOver() {
     var iid = parse("iid");
     
     if (uid && msgid && chatid) {
+        console.log("TAKS")
         $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/chat/"+chatid+"/msg/"+msgid+"/score/"+score);
     }
     else if (uid && iid) {
+        console.log("TAKS2")
         $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/iid/"+iid+"/score/"+score)
     }
 }

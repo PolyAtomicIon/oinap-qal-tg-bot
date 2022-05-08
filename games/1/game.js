@@ -208,9 +208,9 @@ function setGameOver() {
     console.log(uid && msgid && chatid)
 
     
-    window.top.postMessage({
-        name: 'showAd',
-    }, '*');
+    // window.top.postMessage({
+    //     name: 'showAd',
+    // }, '*');
     window.top.postMessage({
         name: 'gameFinished',
         finalScore: score,

@@ -193,6 +193,9 @@ function defeat(enemy, projectile) {
 
 // Triggers the Game Over status. Shows a defeat message and disables all input and processing. Also, sets the score.
 function setGameOver() {
+    window.top.postMessage({
+        name: 'showAd',
+    }, '*')
     game.add.bitmapText(game.width / 2 - 150, game.height * 0.3, "heartbit-72", "GAME OVER", 72);
     game.add.bitmapText(game.width / 2 - 150, game.height * 0.35, "heartbit-72", "Your score: " + score, 72);
     gameOver = true;

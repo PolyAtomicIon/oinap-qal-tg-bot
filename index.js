@@ -138,6 +138,6 @@ app.post("/upload-game/", upload.any(), async (req, res) => {
     .promise()
     .then(() => fs.unlink(filePath, () => {}));
 
-  res.sendStatus(200).json({ game_id: fileName });
+  return res.status(200).json({ game_id: fileName });
 
 });

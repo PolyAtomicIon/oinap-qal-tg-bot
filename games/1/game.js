@@ -206,15 +206,15 @@ function setGameOver() {
     var chatid = parse("chatid");
     var iid = parse("iid");
     console.log(uid && msgid && chatid)
+
     
-    if (uid && msgid && chatid) {
-        console.log("TAKS")
-        $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/chat/"+chatid+"/msg/"+msgid+"/score/"+score);
-    }
-    else if (uid && iid) {
-        console.log("TAKS2")
-        $.get("https://biz-oinaimyz.herokuapp.com/setscore/uid/"+uid+"/iid/"+iid+"/score/"+score)
-    }
+    window.top.postMessage({
+        name: 'showAd',
+    }, '*');
+    window.top.postMessage({
+        name: 'gameFinished',
+        finalScore: score,
+    }, '*');
 }
 
 // Simple borrowed function to retrieve GET parameters

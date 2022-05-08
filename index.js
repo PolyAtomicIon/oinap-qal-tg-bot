@@ -45,30 +45,28 @@ bot.command(["/start", "/help"], (ctx) => {
     "Hi! This is the bot for Three Tap Heroes.\n" +
     "Commands:\n" +
     "- /help Shows this message\n" +
-    "- /instructions Prints the instructions for the game\n" +
-    "- /credits Shows the credits\n" +
     "- /game Sends the game";
   ctx.reply(reply);
 });
 
-bot.command("/instructions", (ctx) => {
-  var reply =
-    "Three young heroes are standing between an army of monsters and " +
-    "the innocent villagers! Help them coordinating their attacks to repel " +
-    "the enemies. But beware! Only the frontmost enemy can be damaged. " +
-    "If you miss and hit another target, you will loose hearts! If you run " +
-    "out of hearts or the enemy reaches the heroes, it's Game Over!";
-  ctx.reply(reply);
-});
+// bot.command("/instructions", (ctx) => {
+//   var reply =
+//     "Three young heroes are standing between an army of monsters and " +
+//     "the innocent villagers! Help them coordinating their attacks to repel " +
+//     "the enemies. But beware! Only the frontmost enemy can be damaged. " +
+//     "If you miss and hit another target, you will loose hearts! If you run " +
+//     "out of hearts or the enemy reaches the heroes, it's Game Over!";
+//   ctx.reply(reply);
+// });
 
-bot.command("/credits", (ctx) => {
-  fs.readFile("./CREDITS.md", "utf8", (err, data) => {
-    var answer = err
-      ? "Somebody stole the CREDITS! Please wait while we call the Web Police"
-      : data;
-    ctx.reply(answer);
-  });
-});
+// bot.command("/credits", (ctx) => {
+//   fs.readFile("./CREDITS.md", "utf8", (err, data) => {
+//     var answer = err
+//       ? "Somebody stole the CREDITS! Please wait while we call the Web Police"
+//       : data;
+//     ctx.reply(answer);
+//   });
+// });
 
 bot.command("/game", (ctx) => {
   ctx.replyWithGame(tokens.GAME_NAME);

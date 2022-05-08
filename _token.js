@@ -1,6 +1,6 @@
 module.exports = {
     //Put your bot related informations here
-    APP_NAME: "MyPrettyBot",
+    APP_NAME: "OinapQalGameBot",
     BOT_TOKEN: "5293481723:AAEEM1ipEos-ChPwF6I3zSqbOXaOpUtzdMQ",
     WEBHOOK: 'https://biz-oinaimyz.herokuapp.com/', //https://telegram-bot-sdk.readme.io/docs/setwebhook
     GAME_URL: 'https://www.oinap-qal.abmco.kz/#/games/1',

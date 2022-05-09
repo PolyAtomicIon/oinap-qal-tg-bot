@@ -73,7 +73,16 @@ bot.command("/game", (ctx) => {
 });
 
 app.get("/games/:game_id/*", (req, res) => {
-  res.sendFile(path.resolve(gamesFolder, `./${req.path}`));
+  const pathToFile = path.resolve(gamesFolder, `./${req.path}`);
+  if (fs.existsSync(pathToFile)) {
+    res.sendFile(pathToFile);
+  } else {
+    console.log(pathToFile)
+    if( !pathToFile.includes('js') && !pathToFile.includes('css') )
+      res.sendFile(path.resolve(__dirname, './404/index.html'))
+    else
+      res.sendStatus(404)
+  }
 });
 
 app.get(
@@ -138,4 +147,8 @@ app.post("/upload-game/", upload.any(), async (req, res) => {
 
   return res.status(200).json({ game_id: fileName });
 
+});
+
+app.get('*', function(req, res){
+  res.sendFile(path.resolve(__dirname, './404/index.html'))
 });

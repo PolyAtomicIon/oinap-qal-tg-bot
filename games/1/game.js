@@ -49,7 +49,7 @@ class Hero {
 }
 
 const COOLDOWN_TIME = 150;
-const PROJ_SPEED = -1000;
+const PROJ_SPEED = -1500;
 
 var game = new Phaser.Game(720, 1280, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update }); 
 var gameOver = false;

@@ -1,4 +1,4 @@
-# Three Tap Heroes
+a# Three Tap Heroes
 
 Three young heroes are standing between an army of monsters and the innocent villagers! Help them coordinating their attacks to repel the enemies. But beware! Only the frontmost enemy can be damaged. If you miss and hit another target, you will loose hearts! If you run out of hearts or the enemy reaches the heroes, it's Game Over!
 

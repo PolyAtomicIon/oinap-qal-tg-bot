@@ -4,6 +4,7 @@ var Telegraf = require("telegraf");
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+const cors = require('cors');
 
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
@@ -17,6 +18,7 @@ var app = express();
 app.set("port", tokens.PORT || tokens.DEFAULT_PORT);
 app.use(express.static(path.join(__dirname + "/html")));
 app.use(bot.webhookCallback("/bot" + tokens.BOT_TOKEN));
+app.use(cors())
 
 bot.telegram.setWebhook(tokens.WEBHOOK + "bot" + tokens.BOT_TOKEN);
 

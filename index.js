@@ -121,7 +121,8 @@ var assign = multer.diskStorage({
     cb(null, gamesToUploadFolder);
   },
   filename: function (request, file, cb) {
-    cb(null, uuidv4().split('-')[0] + ".zip");
+    const randomName = Math. floor(Math. random() * (100000 - 2 + 1)) + 2
+    cb(null, randomName + ".zip");
   },
 });
 var upload = multer({ storage: assign });

@@ -121,7 +121,7 @@ var assign = multer.diskStorage({
     cb(null, gamesToUploadFolder);
   },
   filename: function (request, file, cb) {
-    const randomName = Math. floor(Math. random() * (100000 - 2 + 1)) + 2
+    const randomName = Math.floor(Math. random() * (100000 - 2 + 1)) + 2
     cb(null, randomName + ".zip");
   },
 });

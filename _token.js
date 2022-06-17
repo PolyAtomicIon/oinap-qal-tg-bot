@@ -3,8 +3,8 @@ module.exports = {
     APP_NAME: "OinapQalGameBot",
     BOT_TOKEN: "5293481723:AAEEM1ipEos-ChPwF6I3zSqbOXaOpUtzdMQ",
     WEBHOOK: 'https://biz-oinaimyz.herokuapp.com/', //https://telegram-bot-sdk.readme.io/docs/setwebhook
-    GAME_URL: 'https://www.oinap-qal.abmco.kz/#/games/1',
-    GAME_NAME: 'three3ninjas',
+    GAME_URL: 'https://www.oinap-qal.abmco.kz/#/games/14',
+    GAME_NAME: 'defenders',
     PORT: 3000, // Put your specific port here
     DEFAULT_PORT: 3000
 }

@@ -44,7 +44,7 @@ bot.gameQuery((ctx) => {
 
 bot.command(["/start", "/help"], (ctx) => {
   var reply =
-    "Hi! This is the bot for Three Tap Heroes.\n" +
+    "Hi! This is the bot for Oinap Qal Kz.\n" +
     "Commands:\n" +
     "- /help Shows this message\n" +
     "- /game Sends the game";

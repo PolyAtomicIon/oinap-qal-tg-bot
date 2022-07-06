@@ -16,3 +16,4 @@ This project is very early in development. You might spot various errors in the 
 
 The game itself is written in Javascript using Phaser. Please refer to http://phaser.io/ for further details. 
 The bot itself runs on Node.js using Telegraf (http://telegraf.js.org) and Express (http://expressjs.com/)
+"# oinap-qal-tg-bot" 
